@@ -16,8 +16,10 @@
 ### The SSD object detection composes of 2 parts:
 - Extract feature maps
 - Apply convolution filters to detect objects
-<br>
+<img src= "https://github.com/Shrayansh19/SSD-Model-Zoo/blob/main/doc/1_aex5im2aYcsk4RVKUD4zeg.jpeg">
+
 SSD uses VGG16 to extract feature maps. Then it detects objects using the Conv4_3 layer. 
+
 ## Datasets
 To make things easy, we provide bash scripts to handle the dataset downloads and setup for you.  We also provide simple dataset loaders that inherit `torch.utils.data.Dataset`, making them fully compatible with the `torchvision.datasets` [API](http://pytorch.org/docs/torchvision/datasets.html).
 
