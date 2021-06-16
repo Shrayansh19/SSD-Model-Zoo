@@ -9,10 +9,15 @@
 - Then download the dataset below.
 # Summary
 ## Intro
--SSD is designed for object detection in real-time and it also eliminate the need for the region proposal network. To recover the drop in accuracy, SSD applies a few improvements including multi-scale features and default boxes which allow SSD to match the Faster R-CNN’s accuracy using lower resolution images, which further pushes the speed higher. 
-### Comparison 
+- SSD is designed for object detection in real-time and it also eliminate the need for the region proposal network. To recover the drop in accuracy, SSD applies a few improvements including multi-scale features and default boxes which allow SSD to match the Faster R-CNN’s accuracy using lower resolution images, which further pushes the speed higher. 
+###  *Comparison 
 <img src= "https://github.com/Shrayansh19/SSD-Model-Zoo/blob/main/doc/1_rqGEyJKbKv3ecmjaMSiEtA.png">
 
+### The SSD object detection composes of 2 parts:
+- Extract feature maps
+- Apply convolution filters to detect objects
+<br>
+SSD uses VGG16 to extract feature maps. Then it detects objects using the Conv4_3 layer. 
 ## Datasets
 To make things easy, we provide bash scripts to handle the dataset downloads and setup for you.  We also provide simple dataset loaders that inherit `torch.utils.data.Dataset`, making them fully compatible with the `torchvision.datasets` [API](http://pytorch.org/docs/torchvision/datasets.html).
 
