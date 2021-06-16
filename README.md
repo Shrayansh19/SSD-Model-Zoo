@@ -1,8 +1,7 @@
-# SSD: Single Shot MultiBox Object Detector in PyTorch(COCO & VOC DATASET)
-A [PyTorch](http://pytorch.org/) implementation of [Single Shot MultiBox Detector](http://arxiv.org/abs/1512.02325) from the 2016 paper by Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang, and Alexander C. Berg.  The official and original Caffe code can be found [here](https://github.com/weiliu89/caffe/tree/ssd).
-
+# SSD: Single Shot MultiBox Object Detector, in PyTorch
 
 <img align="right" src= "https://github.com/amdegroot/ssd.pytorch/blob/master/doc/ssd.png" height = 400/>
+
 
 ## Installation
 - Install [PyTorch](http://pytorch.org/) by selecting your environment on the website and running the appropriate command.
@@ -19,6 +18,11 @@ A [PyTorch](http://pytorch.org/) implementation of [Single Shot MultiBox Detecto
   ```
   * Then (during training) navigate to http://localhost:8097/ (see the Train section below for training details).
 - Note: For training, we currently support [VOC](http://host.robots.ox.ac.uk/pascal/VOC/) and [COCO](http://mscoco.org/), and aim to add [ImageNet](http://www.image-net.org/) support soon.
+# Summary
+## Intro
+-SSD is designed for object detection in real-time and it also eliminate the need for the region proposal network. To recover the drop in accuracy, SSD applies a few improvements including multi-scale features and default boxes which allow SSD to match the Faster R-CNN’s accuracy using lower resolution images, which further pushes the speed higher. 
+<img align="left" src= "https://github.com/amdegroot/ssd.pytorch/blob/master/doc/detection_examples.png">
+
 
 ## Datasets
 To make things easy, we provide bash scripts to handle the dataset downloads and setup for you.  We also provide simple dataset loaders that inherit `torch.utils.data.Dataset`, making them fully compatible with the `torchvision.datasets` [API](http://pytorch.org/docs/torchvision/datasets.html).
