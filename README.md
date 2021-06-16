@@ -124,50 +124,13 @@ You can specify the parameters listed in the `eval.py` file by flagging them or 
 <p align="left">
 <img src="http://www.cs.unc.edu/~wliu/papers/ssd_results.png" alt="SSD results on multiple datasets" width="800px"></p>
 
-### Try the demo notebook
-- Make sure you have [jupyter notebook](http://jupyter.readthedocs.io/en/latest/install.html) installed.
-- Two alternatives for installing jupyter notebook:
-    1. If you installed PyTorch with [conda](https://www.continuum.io/downloads) (recommended), then you should already have it.  (Just  navigate to the ssd.pytorch cloned repo and run):
-    `jupyter notebook`
-
-    2. If using [pip](https://pypi.python.org/pypi/pip):
-
-```Shell
-# make sure pip is upgraded
-pip3 install --upgrade pip
-# install jupyter notebook
-pip install jupyter
-# Run this inside ssd.pytorch
-jupyter notebook
-```
-
-- Now navigate to `demo/demo.ipynb` at http://localhost:8888 (by default) and have at it!
-
-### Try the webcam demo
-- Works on CPU (may have to tweak `cv2.waitkey` for optimal fps) or on an NVIDIA GPU
-- This demo currently requires opencv2+ w/ python bindings and an onboard webcam
-  * You can change the default webcam in `demo/live.py`
-- Install the [imutils](https://github.com/jrosebr1/imutils) package to leverage multi-threading on CPU:
-  * `pip install imutils`
-- Running `python -m demo.live` opens the webcam and begins detecting!
-
-## TODO
-We have accumulated the following to-do list, which we hope to complete in the near future
-- Still to come:
-  * [x] Support for the MS COCO dataset
-  * [ ] Support for SSD512 training and testing
-  * [ ] Support for training on custom datasets
-
 ## Authors
 
-* [**Max deGroot**](https://github.com/amdegroot)
-* [**Ellis Brown**](http://github.com/ellisbrown)
-
-***Note:*** Unfortunately, this is just a hobby of ours and not a full-time job, so we'll do our best to keep things up to date, but no guarantees.  That being said, thanks to everyone for your continued help and feedback as it is really appreciated. We will try to address everything as soon as possible.
+* [**Shrayansh Jakar**](https://github.com/Shrayansh19)
 
 ## References
-- Wei Liu, et al. "SSD: Single Shot MultiBox Detector." [ECCV2016]((http://arxiv.org/abs/1512.02325)).
-- [Original Implementation (CAFFE)](https://github.com/weiliu89/caffe/tree/ssd)
-- A huge thank you to [Alex Koltun](https://github.com/alexkoltun) and his team at [Webyclip](http://www.webyclip.com) for their help in finishing the data augmentation portion.
-- A list of other great SSD ports that were sources of inspiration (especially the Chainer repo):
-  * [Chainer](https://github.com/Hakuyume/chainer-ssd), [Keras](https://github.com/rykov8/ssd_keras), [MXNet](https://github.com/zhreshold/mxnet-ssd), [Tensorflow](https://github.com/balancap/SSD-Tensorflow)
+- Wei Liu, et al. "SSD: Single Shot MultiBox Detector." [Cornell Paper](https://arxiv.org/abs/1512.02325).
+- COCO: Common Objects in Context. http://mscoco.org/dataset/
+#detections-leaderboard (2016) [Online; accessed 25-July-2016].
+- He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for image recognition. In: CVPR.
+(2016)
