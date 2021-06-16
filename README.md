@@ -21,7 +21,7 @@
 # Summary
 ## Intro
 -SSD is designed for object detection in real-time and it also eliminate the need for the region proposal network. To recover the drop in accuracy, SSD applies a few improvements including multi-scale features and default boxes which allow SSD to match the Faster R-CNN’s accuracy using lower resolution images, which further pushes the speed higher. 
-<img align="left" src= "https://github.com/amdegroot/ssd.pytorch/blob/master/doc/detection_examples.png">
+<img align="left" src= "https://github.com/Shrayansh19/SSD-Model-Zoo/blob/main/doc/1_rqGEyJKbKv3ecmjaMSiEtA.png">
 
 
 ## Datasets
