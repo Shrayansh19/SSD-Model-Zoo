@@ -1,12 +1,6 @@
 # SSD: Single Shot MultiBox Object Detector, in PyTorch
+![1_tDKlbaeHGSm_TwN02jLB8w](https://user-images.githubusercontent.com/63955480/122269885-55692780-cefb-11eb-8431-57c5ef1fa375.jpeg)
 
-<img align="right" src= "https://github.com/amdegroot/ssd.pytorch/blob/master/doc/ssd.png" height = 400/>
-
-
-## Installation
-- Install [PyTorch](http://pytorch.org/) by selecting your environment on the website and running the appropriate command.
-- Clone this repository.
-- Then download the dataset below.
 # Summary
 ## Intro
 - SSD is designed for object detection in real-time and it also eliminate the need for the region proposal network. To recover the drop in accuracy, SSD applies a few improvements including multi-scale features and default boxes which allow SSD to match the Faster R-CNN’s accuracy using lower resolution images, which further pushes the speed higher. 
@@ -20,66 +14,34 @@
 
 SSD uses VGG16 to extract feature maps. Then it detects objects using the Conv4_3 layer. 
 
-## Datasets
-To make things easy, we provide bash scripts to handle the dataset downloads and setup for you.  We also provide simple dataset loaders that inherit `torch.utils.data.Dataset`, making them fully compatible with the `torchvision.datasets` [API](http://pytorch.org/docs/torchvision/datasets.html).
-
-
-### COCO
-Microsoft COCO: Common Objects in Context
-
-##### Download COCO 2014
-```Shell
-# specify a directory for dataset to be downloaded into, else default is ~/data/
-sh data/scripts/COCO2014.sh
-```
-
-### VOC Dataset
-PASCAL VOC: Visual Object Classes
-
-##### Download VOC2007 trainval & test
-```Shell
-# specify a directory for dataset to be downloaded into, else default is ~/data/
-sh data/scripts/VOC2007.sh # <directory>
-```
-
-##### Download VOC2012 trainval
-```Shell
-# specify a directory for dataset to be downloaded into, else default is ~/data/
-sh data/scripts/VOC2012.sh # <directory>
-```
-
-## Training SSD
-- First download the fc-reduced [VGG-16](https://arxiv.org/abs/1409.1556) PyTorch base network weights at:              https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth
-- By default, we assume you have downloaded the file in the `ssd.pytorch/weights` dir:
-
-```Shell
-mkdir weights
-cd weights
-wget https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth
-```
-
-- To train SSD using the train script simply specify the parameters listed in `train.py` as a flag or manually change them.
-
-```Shell
-python train.py
-```
-
-- Note:
-  * For training, an NVIDIA GPU is strongly recommended for speed.
-  * For instructions on Visdom usage/installation, see the <a href='#installation'>Installation</a> section.
-  * You can pick-up training from a checkpoint by specifying the path as one of the training parameters (again, see `train.py` for options)
 
 ## Evaluation
-To evaluate a trained network:
+I have trained the model for 100 epochs 
 
-```Shell
-python eval.py
-```
+Below are Avereage Precision values for all classes:-
 
-You can specify the parameters listed in the `eval.py` file by flagging them or manually changing them.  
-
-
-<img align="left" src= "https://github.com/amdegroot/ssd.pytorch/blob/master/doc/detection_examples.png">
+ | Class | Average Precision |
+ | :-----: | :------: |
+ | _aeroplane_ | 0.7508596181869507 |
+ | _bicycle_ | 0.8064944744110107 |  
+ | _bird_ | 0.7118245959281921 |     
+ | _boat_ | 0.6522005200386047 |     
+ | _bottle_ | 0.4388348162174225 |   
+ | _bus_ | 0.8313817381858826 |      
+ | _car_ | 0.8420098423957825 |      
+ | _cat_ | 0.8460454344749451 |
+ | _chair_ | 0.4887792468070984 |
+ | _cow_ | 0.7463425993919373 |
+ | _diningtable_ | 0.7300090789794922 |
+ | _dog_ | 0.7909976243972778 |
+ | _horse_ | 0.8242510557174683 |
+ | _motorbike_ | 0.804941713809967 |
+ | _person_ | 0.7624345421791077 |
+ | _pottedplant_ | 0.4471535384654999 |
+ | _sheep_ | 0.7205353379249573 |
+ | _sofa_ | 0.7502992749214172 |
+ | _train_ | 0.8156716823577881 |
+ | _tvmonitor_ | 0.6981692910194397 |
 
 ## Performance
 
@@ -91,8 +53,6 @@ You can specify the parameters listed in the `eval.py` file by flagging them or 
 |:-:|:-:|:-:|:-:|
 | 77.2 % | 77.26 % | 58.12% | 77.43 % |
 
-##### FPS
-**GTX 1060:** ~45.45 FPS
 
 ## Contributor
 
