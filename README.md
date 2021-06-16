@@ -1,4 +1,4 @@
-# SSD: Single Shot MultiBox Object Detector, in PyTorch
+# SSD: Single Shot MultiBox Object Detector in PyTorch (VOC 2007 Dataset)
 ![1_tDKlbaeHGSm_TwN02jLB8w](https://user-images.githubusercontent.com/63955480/122269885-55692780-cefb-11eb-8431-57c5ef1fa375.jpeg)
 
 # Summary
