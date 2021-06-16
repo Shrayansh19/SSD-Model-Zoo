@@ -7,16 +7,31 @@
 ###  *Comparison 
 <img src= "https://github.com/Shrayansh19/SSD-Model-Zoo/blob/main/doc/1_rqGEyJKbKv3ecmjaMSiEtA.png">
 
-### The SSD object detection composes of 2 parts:
-- Extract feature maps
-- Apply convolution filters to detect objects
-<img src= "https://github.com/Shrayansh19/SSD-Model-Zoo/blob/main/doc/1_aex5im2aYcsk4RVKUD4zeg.jpeg">
+To improve accuracy, SSD introduces:
+- small convolutional filters to predict object classes and offsets to default boundary boxes.
+- separate filters for default boxes to handle the difference in aspect ratios.
+- multi-scale feature maps for object detection.
 
-SSD uses VGG16 to extract feature maps. Then it detects objects using the Conv4_3 layer. 
+### The principle of the ssd model is :
+
+- Multi-scale feature maps for detection
+- After the basic network structure, additional convolutional layers are added. The size of these convolutional layers is decreasing layer by layer and can be predicted at multiple scales.
+- Convolutional predictors for detection and added feature layers can use a series of convolution kernels to generate a series of fixed-size prediction results, as shown in the following figure. For a m × n feature layer with p channels.
+- At each m × n feature map location, using the 3 × 3 kernel will produce an output value. The location offset value of the predicted bounding box is the relative distance between the output default bounding box position and the feature map location at this time
+![7da6066b446d826f3ad05e4be56f5883](https://user-images.githubusercontent.com/63955480/122278693-cfea7500-cf04-11eb-9bc4-0bb5408b6c47.png)
+
+### SSD model:
+![ssd_architecture](https://user-images.githubusercontent.com/63955480/122277363-6fa70380-cf03-11eb-999c-1016ef1c9fa2.png)
+
+### Key Observations:
+- Accuracy increases with the number of default boundary boxes at the cost of speed.
+- Multi-scale feature maps improve the detection of objects at a different scale.
+- Better default boundary boxes will help accuracy.
+- SSD has lower localization error comparing with R-CNN but more classification error dealing with similar categories. The higher classification errors are likely because we use the same boundary box to make multiple class predictions.
 
 
 ## Evaluation
-I have trained the model for 100 epochs 
+- I have trained the model for 100 epochs 
 
 Below are Avereage Precision values for all classes:-
 
